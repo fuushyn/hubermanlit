@@ -93,7 +93,7 @@ question_prompt = PromptTemplate(
 
 
 pinecone.list_indexes()
-index = pinecone.GRPCIndex(index_name)
+index = pinecone.Index(index_name)
 docsearch = Pinecone(index, hypothetical_embeddings.embed_query, 'text')
 
 doc_chain_refine = load_qa_with_sources_chain(chat_llm, chain_type="refine",question_prompt=question_prompt, refine_prompt=refine_prompt)
