@@ -98,6 +98,7 @@ docsearch = Pinecone(index, hypothetical_embeddings.embed_query, 'text')
 
 doc_chain_refine = load_qa_with_sources_chain(chat_llm, chain_type="refine",question_prompt=question_prompt, refine_prompt=refine_prompt)
 
+question_generator = LLMChain(llm=basic_llm, prompt=CONDENSE_QUESTION_PROMPT)
 
 
 # query = "How to lose fat? Answer in bullet points"
