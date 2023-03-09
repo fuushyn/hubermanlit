@@ -122,11 +122,11 @@ st.set_page_config(page_title="Ask Huberman Lab", page_icon=":robot:")
 st.header("Ask Huberman Lab")
 
 
-st.subheader("⚡⚡Sample queries⚡⚡ ")
-st.caption("How to overcome the afternoon slump?")
-st.markdown("What is fat mobilization?")
-st.success("Give me 5 actionable tips to lose fat")
-st.warning("What's a common precursor molecule to both dopamine and adrenaline?")
+st.subheader("🚨Sample queries🚨 ")
+st.markdown("⚡ How to overcome the afternoon slump?")
+st.markdown("⚡ What is fat mobilization?")
+st.markdown("⚡ Give me 5 actionable tips to lose fat")
+st.markdown("⚡ What's a common precursor molecule to both dopamine and adrenaline?")
 
 if "generated" not in st.session_state:
     st.session_state["generated"] = []
