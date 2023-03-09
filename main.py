@@ -127,20 +127,20 @@ if "past" not in st.session_state:
     st.session_state["past"] = []
 
 
-def get_text():
-    input_text = st.text_input("You: ", "type your question here...", key="input")
-    print(f'Inside get_text, input_text = {input_text}')
-    return input_text
+with st.form("my_form"):
+   st.write("Inside the form")
+   query = st.text_input("Query")
+   # Every form must have a submit button.
+   submitted = st.form_submit_button("Submit")
+   if submitted:       
+        st.write("Query", query)
 
+        print('getting output')
+        output = chain({"question": query, "chat_history": []})['answer']
 
-user_input = get_text()
+        st.session_state.past.append(query)
+        st.session_state.generated.append(output)
 
-if user_input:
-    print('getting output')
-    output = chain({"question": user_input, "chat_history": []})['answer']
-
-    st.session_state.past.append(user_input)
-    st.session_state.generated.append(output)
 
 if st.session_state["generated"]:
 
