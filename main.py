@@ -148,6 +148,7 @@ if st.session_state["generated"]:
     for i in range(len(st.session_state["generated"]) - 1, -1, -1):
         lastop= st.session_state["generated"][i].split('\n')
         for j in range(len(lastop)):
-
+            if(lastop[j]=="" or lastop[j]==" "):
+                continue
             message(lastop[j], key=f'{i}_{j}')
         message(st.session_state["past"][i], is_user=True, key=str(i) + "_user")
