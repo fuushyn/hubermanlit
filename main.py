@@ -117,7 +117,7 @@ def load_chain():
 chain = load_chain()
 
 # From here down is all the StreamLit UI.
-st.set_page_config(page_title="Ask Huberman", page_icon=":robot:")
+st.set_page_config(page_title="Ask Huberman Lab", page_icon=":robot:")
 st.header("Ask Huberman")
 
 if "generated" not in st.session_state:
@@ -132,13 +132,16 @@ with st.form("my_form"):
    # Every form must have a submit button.
    submitted = st.form_submit_button("Ask")
    if submitted:       
-        st.write("You asked: ", query, "  Running...")
+        st.write("You asked: ", query, " ... Running...")
 
         print('getting output')
         output = chain({"question": query, "chat_history": []})['answer']
-        
+        out_splits= output.split('\n')
         st.session_state.past.append(query)
-        st.session_state.generated.append(output)
+        for split in out_splits:
+            st.session_state.generated.append(split)
+
+
 
 
 if st.session_state["generated"]:
