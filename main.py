@@ -127,6 +127,7 @@ image = Image.open('huberman.jpg')
 st.image(image, caption='Andrew Huberman', width= 150)
 
 st.header("Ask Huberman Lab")
+st.markdown("by [@heat_bender](https://twitter.com/heat_bender)")
 
 
 st.subheader("🚨Sample queries🚨 ")
