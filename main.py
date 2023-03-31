@@ -32,6 +32,7 @@ import json, os
 from langchain.chains import VectorDBQAWithSourcesChain
 from langchain import OpenAI
 import pinecone 
+from PIL import Image
 
 
 
@@ -119,13 +120,19 @@ chain = qa_base1
 
 # From here down is all the StreamLit UI.
 st.set_page_config(page_title="Ask Huberman Lab", page_icon=":robot:")
+
+
+image = Image.open('huberman.jpg')
+
+st.image(image, caption='huberman head', width= 100)
+
 st.header("Ask Huberman Lab")
 
 
 st.subheader("🚨Sample queries🚨 ")
 st.markdown("⚡ How to overcome the afternoon slump?")
 st.markdown("⚡ What is fat mobilization?")
-st.markdown("⚡ Give me 5 actionable tips to lose fat")
+st.markdown("⚡ Give me tips to lose fat")
 st.markdown("⚡ What's a common precursor molecule to both dopamine and adrenaline?")
 
 if "generated" not in st.session_state:
