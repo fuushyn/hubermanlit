@@ -124,7 +124,7 @@ st.set_page_config(page_title="Ask Huberman Lab", page_icon=":robot:")
 
 image = Image.open('huberman.jpg')
 
-st.image(image, caption='Andrew Huberman', width= 180)
+st.image(image, caption='Andrew Huberman', width= 150)
 
 st.header("Ask Huberman Lab")
 
