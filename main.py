@@ -48,7 +48,7 @@ pinecone.init(
     environment="us-west1-gcp"  # next to api key in console
 )
 
-index_name = "askhuberman"
+index_name = "askhuberman-b8dbde9-index"
 
 
 # refine_template = (
